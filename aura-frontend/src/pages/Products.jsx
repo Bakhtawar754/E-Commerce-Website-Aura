@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const productsData = [
   {
@@ -18,23 +18,30 @@ const productsData = [
   {
     category: 'Charm Bracelets',
     products: [
-      { id: 9, name: 'Heart Charms', price: 1800, img: '/images/charm1.jpg', sale: true },
+      { id: 9, name: 'Heart Charms', price: 1800, img: '/charm1.jpg', sale: true },
       { id: 10, name: 'Butterfly Charms', price: 2000, img: '/images/charm2.jpg' },
       { id: 11, name: 'Moon Charms', price: 1600, img: '/images/charm1.jpg' },
       { id: 12, name: 'Star Charms', price: 2100, img: '/images/charm2.jpg' },
+      { id: 13, name: 'Heart Charms', price: 1800, img: '/images/charm1.jpg', sale: true },
+      { id: 14, name: 'Butterfly Charms', price: 2000, img: '/images/charm2.jpg' },
+      { id: 15, name: 'Moon Charms', price: 1600, img: '/images/charm1.jpg' },
+      { id: 16, name: 'Star Charms', price: 2100, img: '/images/charm2.jpg' },
     ]
   },
   {
     category: 'Leather Bracelets',
     products: [
-      { id: 13, name: 'Brown Wrap', price: 2000, img: '/images/leather1.jpg' },
-      { id: 14, name: 'Braided Black', price: 1900, img: '/images/leather2.jpg', sale: true },
-      { id: 15, name: 'Double Layered', price: 1800, img: '/images/leather1.jpg' },
-      { id: 16, name: 'Vintage Brown', price: 2100, img: '/images/leather2.jpg' },
-    ]
+      { id: 17, name: 'Brown Wrap', price: 2000, img: '/images/leather1.jpg' },
+      { id: 18, name: 'Braided Black', price: 1900, img: '/images/leather2.jpg', sale: true },
+      { id: 19, name: 'Double Layered', price: 1800, img: '/images/leather1.jpg' },
+      { id: 20, name: 'Vintage Brown', price: 2100, img: '/images/leather2.jpg' },
+      { id: 21, name: 'Brown Wrap', price: 2000, img: '/images/leather1.jpg' },
+      { id: 22, name: 'Braided Black', price: 1900, img: '/images/leather2.jpg', sale: true },
+      { id: 23, name: 'Double Layered', price: 1800, img: '/images/leather1.jpg' },
+      { id: 24, name: 'Vintage Brown', price: 2100, img: '/images/leather2.jpg' },
+]
   }
-];
-
+]
 const Products = () => {
   const [cart, setCart] = useState([]);
 
@@ -42,7 +49,18 @@ const Products = () => {
     setCart([...cart, product]);
     alert(`${product.name} added to cart!`);
   };
+const fetchProducts = async () => {
+    try {
+      const res = await axios.get('http://localhost:5000/api/products');
+      setCart(res.data);
+    } catch (err) {
+      console.error('Error fetching products:', err);
+    }
+  };
 
+  useEffect(() => {
+    fetchProducts();
+  }, []);
   return (
     <div className="products-page">
       <h1 className="page-title"> Our Arrivals_</h1>
@@ -68,6 +86,7 @@ const Products = () => {
     </div>
   );
 };
+
 
 export default Products;
 

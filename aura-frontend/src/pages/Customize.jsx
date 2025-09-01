@@ -9,7 +9,7 @@ const Customize = () => {
 
   return (
     <div className="customize-container">
-      <h1 className="customize-title">✨ Customize Your Bracelet ✨</h1>
+      <h1 className="customize-title">Customize Your Bracelet_</h1>
       
       <div className="customize-form">
         <div className="form-section">

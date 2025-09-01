@@ -2,8 +2,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-const authRoutes = require('./routes/auth');
+const authRoutes = require("./routes/auth");
 const cors = require("cors");
+const productRoutes = require('./routes/product');
+
 
 
 dotenv.config();
@@ -20,6 +22,8 @@ app.use(express.static('public'));
 
 // Routes
 app.use('/api/auth', authRoutes);
+app.use('/api/products', productRoutes);
+
 
 // MongoDB Connection
 mongoose

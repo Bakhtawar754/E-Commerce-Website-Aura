@@ -1193,7 +1193,9 @@ body {
 .products-page {
   padding: 40px;
   background: #fafafa;
-  font-family: 'Dancing Script', cursive;
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 .page-title {
@@ -1292,20 +1294,21 @@ body {
 /*Customize page*/
 .customize-container {
   padding: 2rem;
-  background: #121212;
-  color: #f0f0f0;
-  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #faf5ff, #f0e8ff);
+font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 .customize-title {
   text-align: center;
-  font-size: 2.5rem;
-  color: #f39c12;
+  font-size: 48px;
+  color:  #8e44ad;
   margin-bottom: 2rem;
 }
 
 .customize-form {
-  background: #1e1e1e;
+  background: white;
   padding: 2rem;
   border-radius: 16px;
   display: grid;
@@ -1322,6 +1325,8 @@ body {
 .form-section label {
   font-weight: bold;
   margin-bottom: 0.5rem;
+  font-size: 26px;
+  color: #8e44ad;
 }
 
 .form-section select,
@@ -1329,55 +1334,59 @@ body {
   padding: 0.6rem;
   border: none;
   border-radius: 8px;
-  background: #2c2c2c;
-  color: #fff;
+  background: white;
+  color: black;
   font-size: 1rem;
 }
 
 .preview-btn {
   grid-column: 1 / -1;
   padding: 0.8rem;
-  background: #f39c12;
+  background: #8e44ad;
   border: none;
   border-radius: 25px;
-  font-size: 1rem;
+  font-size: 24px;
   cursor: pointer;
   color: #fff;
   transition: 0.3s;
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 .preview-btn:hover {
-  background: #d35400;
+  background:#a366c0;
 }
 
 .preview-box {
   text-align: center;
-  background: #222;
+  background: white;
   padding: 2rem;
   border-radius: 16px;
 }
 
 .preview-box p {
   margin: 0.4rem 0;
-  font-size: 1rem;
+  font-size: 20px;
 }
 
 .bracelet-preview-img {
   margin: 1rem auto;
   width: 200px;
   height: 200px;
-  background: #333;
+  background: white;
   border-radius: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #888;
+  color: #8e44ad;
+  font-size: 24px;
 }
 
 .add-to-cart-btn {
   padding: 0.8rem 2rem;
   margin-top: 1rem;
-  background: #27ae60;
+  background: #8e44ad;
   color: white;
   border: none;
   border-radius: 25px;
@@ -1387,7 +1396,7 @@ body {
 }
 
 .add-to-cart-btn:hover {
-  background: #1e8449;
+  background: #a366c0;
 }
 
 
